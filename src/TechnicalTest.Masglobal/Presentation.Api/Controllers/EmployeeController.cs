@@ -4,7 +4,7 @@
 //   </copyright>
 //   <author>Jeysson Stevens  Ramirez </author>
 //   <Date>  2019 -01-04  - 10:22 PM</Date>
-//   <Update> 2019-01-04 - 10:25 PM</Update>
+//   <Update> 2019-01-05 - 12:47 AM</Update>
 //   -----------------------------------------------------------------------
 
 #region
@@ -31,7 +31,7 @@ namespace Presentation.Api.Controllers
 
         // GET api/values
         [HttpGet]
-        [EnableCors("MyPolicy")]//todo not bad practice
+        [EnableCors("MyPolicy")] //todo not bad practice
         public IActionResult Get()
         {
             var result = _appService.GetEmployeesWithSalary();
@@ -40,7 +40,7 @@ namespace Presentation.Api.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        [EnableCors("MyPolicy")]//todo not bad practice
+        [EnableCors("MyPolicy")] //todo not bad practice
         public IActionResult Get(int id)
         {
             var result = _appService.GetEmployeeWithSalary(id);

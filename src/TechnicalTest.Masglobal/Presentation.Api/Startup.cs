@@ -4,7 +4,7 @@
 //   </copyright>
 //   <author>Jeysson Stevens  Ramirez </author>
 //   <Date>  2019 -01-04  - 4:51 PM</Date>
-//   <Update> 2019-01-04 - 9:59 PM</Update>
+//   <Update> 2019-01-05 - 12:47 AM</Update>
 //   -----------------------------------------------------------------------
 
 #region
@@ -50,10 +50,7 @@ namespace Presentation.Api
         {
             app.UseSwagger();
 
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            });
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"); });
 
             if (env.IsDevelopment())
             {

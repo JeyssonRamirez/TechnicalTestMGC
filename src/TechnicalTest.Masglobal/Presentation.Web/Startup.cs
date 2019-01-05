@@ -1,8 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿//   -----------------------------------------------------------------------
+//   <copyright file=Startup.cs company="Jeysson Ramirez">
+//       Copyright (c) Jeysson Ramirez Todos los derechos reservados.
+//   </copyright>
+//   <author>Jeysson Stevens  Ramirez </author>
+//   <Date>  2019 -01-04  - 4:54 PM</Date>
+//   <Update> 2019-01-05 - 12:47 AM</Update>
+//   -----------------------------------------------------------------------
+
+#region
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,10 +16,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+#endregion
+
 namespace Presentation.Web
 {
-   
-
     public class Startup
     {
         public Startup(IConfiguration configuration)

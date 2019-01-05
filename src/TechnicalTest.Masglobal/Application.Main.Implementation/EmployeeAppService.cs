@@ -4,7 +4,7 @@
 //   </copyright>
 //   <author>Jeysson Stevens  Ramirez </author>
 //   <Date>  2019 -01-04  - 4:49 PM</Date>
-//   <Update> 2019-01-04 - 10:44 PM</Update>
+//   <Update> 2019-01-05 - 12:47 AM</Update>
 //   -----------------------------------------------------------------------
 
 #region
@@ -48,7 +48,7 @@ namespace Application.Main.Implementation
                     return response;
                 }
 
-                
+
                 employee.AnnualSalary = _factorySalaryCalculator.GetCalculator(employee.ContractType)
                     .CalculateSalary(employee);
 
