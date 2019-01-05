@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿//   -----------------------------------------------------------------------
+//   <copyright file=Program.cs company="Jeysson Ramirez">
+//       Copyright (c) Jeysson Ramirez Todos los derechos reservados.
+//   </copyright>
+//   <author>Jeysson Stevens  Ramirez </author>
+//   <Date>  2019 -01-04  - 4:51 PM</Date>
+//   <Update> 2019-01-05 - 12:47 AM</Update>
+//   -----------------------------------------------------------------------
+
+#region
+
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+
+#endregion
 
 namespace Presentation.Api
 {
