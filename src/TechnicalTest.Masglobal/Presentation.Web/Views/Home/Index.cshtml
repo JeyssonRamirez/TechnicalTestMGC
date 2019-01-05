@@ -3,8 +3,18 @@
 }
 
 <div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+            <span class="input-group-btn">
+                <button class="btn btn-default" id="btnSearch" type="button">Go!</button>
+            </span>
+            <input type="number" class="form-control" id="txtParameterID" placeholder="Search for Id">
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+<div class="row">
     <div class="col-md-12">
-        <table id="table">
+        <table id="table" class="table table-striped">
             <thead>
             <tr>
                 <th data-field="id">ID</th>
@@ -19,13 +29,46 @@
         </table>
     </div>
 </div>
+
 @section Scripts
 {
 
     <script>
+        // Restricts input for the given textbox to the given inputFilter.
+        function setInputFilter(textbox, inputFilter) {
+            ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(
+                function(event) {
+                    textbox.addEventListener(event,
+                        function() {
+                            if (inputFilter(this.value)) {
+                                this.oldValue = this.value;
+                                this.oldSelectionStart = this.selectionStart;
+                                this.oldSelectionEnd = this.selectionEnd;
+                            } else if (this.hasOwnProperty("oldValue")) {
+                                this.value = this.oldValue;
+                                this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                            }
+                        });
+                });
+        }
+
         $(document).ready(function() {
+            // Install input filters.
+            setInputFilter(document.getElementById("txtParameterID"),
+                function(value) { return /^-?\d*$/.test(value); });
             loadDataAll();
+            $("#btnSearch").on("click", search);
         });
+
+        function search() {
+            var x = $("#txtParameterID").val();
+            if (x != undefined && x != "") {
+                loadData(x);
+            } else {
+                loadDataAll();
+            }
+            $("#txtParameterID").val("");
+        }
 
         function loadDataAll() {
             $.ajax({
@@ -36,7 +79,7 @@
                     dataType: "json"
                 }).done(function(data, textStatus, jqXHR) {
                     if (console && console.log) {
-                        console.log("La solicitud se ha completado correctamente.");
+                        console.log("The request has completed successfully.");
                         if (data.success) {
                             loadTable(data.data);
                         }
@@ -52,18 +95,18 @@
 
         function loadData(id) {
             $.ajax({
-                    url: '@ViewBag.UrlApi/api/employee?id=' + id,
+                    url: '@ViewBag.UrlApi/api/employee/' + id,
 
                     type: "GET",
                     // Formato de datos que se espera en la respuesta
                     dataType: "json"
                 }).done(function(data, textStatus, jqXHR) {
                     if (console && console.log) {
-                        console.log("La solicitud se ha completado correctamente.");
+                        console.log("The request has completed successfully.");
                         if (data.success) {
                             loadTable(data.data);
                         }
-                        
+
                     }
                 })
                 .fail(function(jqXHR, textStatus, errorThrown) {
@@ -74,9 +117,8 @@
         }
 
         function loadTable(data) {
-            $('#table').bootstrapTable({
-                data: data
-            });
+            $('#table').bootstrapTable('destroy');
+            $('#table').bootstrapTable({ data: data });
         }
 
     </script>

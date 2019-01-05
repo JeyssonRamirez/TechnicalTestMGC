@@ -10,6 +10,7 @@
 #region
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Application.Main.Definition;
 using Core.DataTransferObject;
@@ -37,6 +38,7 @@ namespace Application.Main.Implementation
             var response = new ResponseApi();
             try
             {
+                var list = new List<EmployeeDto>();
                 var findedEmployees = _masGlobalRepository.GetEmployees();
                 var employee = findedEmployees.FirstOrDefault(s => s.Id == identification);
                 if (employee == null)
@@ -46,9 +48,12 @@ namespace Application.Main.Implementation
                     return response;
                 }
 
+                
                 employee.AnnualSalary = _factorySalaryCalculator.GetCalculator(employee.ContractType)
                     .CalculateSalary(employee);
-                response.Data = employee;
+
+                list.Add(employee);
+                response.Data = list;
                 response.Success = true;
                 response.ResponseCode = 200; // OK
                 return response;
