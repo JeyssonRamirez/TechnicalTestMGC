@@ -1,10 +1,10 @@
 //   -----------------------------------------------------------------------
-//   <copyright file=UnitTest1.cs company="Jeysson Ramirez">
+//   <copyright file=UnitTestFactory.cs company="Jeysson Ramirez">
 //       Copyright (c) Jeysson Ramirez Todos los derechos reservados.
 //   </copyright>
 //   <author>Jeysson Stevens  Ramirez </author>
 //   <Date>  2019 -01-05  - 12:14 AM</Date>
-//   <Update> 2019-01-05 - 12:23 AM</Update>
+//   <Update> 2019-01-05 - 12:47 AM</Update>
 //   -----------------------------------------------------------------------
 
 #region
@@ -13,7 +13,6 @@ using Application.Main.Implementation;
 using Core.Entities;
 using IoC.DependencyInjectionFactory;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
 
 #endregion
 
@@ -37,6 +36,7 @@ namespace UnitTestProject
             // assert
             Assert.AreEqual(typeContract, currentContract);
         }
+
         //validate if factory return valid salary calculator
         [TestMethod]
         public void FactoryShouldReturnCalculatorForContractMonthlySalaryEmployee()
