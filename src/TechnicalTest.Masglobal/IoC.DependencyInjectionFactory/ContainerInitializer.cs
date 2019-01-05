@@ -4,7 +4,7 @@
 //   </copyright>
 //   <author>Jeysson Stevens  Ramirez </author>
 //   <Date>  2019 -01-04  - 10:05 PM</Date>
-//   <Update> 2019-01-04 - 10:28 PM</Update>
+//   <Update> 2019-01-04 - 10:59 PM</Update>
 //   -----------------------------------------------------------------------
 
 #region
@@ -28,9 +28,12 @@ namespace IoC.DependencyInjectionFactory
             //Repositories
             container.RegisterType<IMasGlobalRepository, MasGlobalRepository>();
             //Tools
-            container.RegisterType<IEnumerable<ISalaryCalculator>, ISalaryCalculator[]>();
+
+
             container.RegisterType<ISalaryCalculator, SalaryCalculatorMonthlySalary>("SalaryCalculatorMonthlySalary");
             container.RegisterType<ISalaryCalculator, SalaryCalculatorHourlySalary>("SalaryCalculatorHourlySalary");
+
+            container.RegisterType<IFactorySalaryCalculator, FactorySalaryCalculator>();
 
             //AppServices
             container.RegisterType<IEmployeeAppService, EmployeeAppService>();

@@ -4,7 +4,7 @@
 //   </copyright>
 //   <author>Jeysson Stevens  Ramirez </author>
 //   <Date>  2019 -01-04  - 4:49 PM</Date>
-//   <Update> 2019-01-04 - 9:53 PM</Update>
+//   <Update> 2019-01-04 - 10:44 PM</Update>
 //   -----------------------------------------------------------------------
 
 #region
@@ -21,14 +21,14 @@ namespace Application.Main.Implementation
 {
     public class EmployeeAppService : IEmployeeAppService
     {
-        private readonly FactorySalaryCalculator _factorySalaryCalculator;
+        private readonly IFactorySalaryCalculator _factorySalaryCalculator;
         private readonly IMasGlobalRepository _masGlobalRepository;
 
         public EmployeeAppService(IMasGlobalRepository masGlobalRepository,
-            FactorySalaryCalculator factorySalaryCalculator)
+            IFactorySalaryCalculator factorySalaryCalculator)
         {
             _masGlobalRepository = masGlobalRepository;
-            this._factorySalaryCalculator = factorySalaryCalculator;
+            _factorySalaryCalculator = factorySalaryCalculator;
         }
 
 

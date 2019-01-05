@@ -11,6 +11,7 @@
 
 using Application.Main.Definition;
 using IoC.DependencyInjectionFactory;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
@@ -30,6 +31,7 @@ namespace Presentation.Api.Controllers
 
         // GET api/values
         [HttpGet]
+        [EnableCors("MyPolicy")]//todo not bad practice
         public IActionResult Get()
         {
             var result = _appService.GetEmployeesWithSalary();
@@ -38,6 +40,7 @@ namespace Presentation.Api.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
+        [EnableCors("MyPolicy")]//todo not bad practice
         public IActionResult Get(int id)
         {
             var result = _appService.GetEmployeeWithSalary(id);

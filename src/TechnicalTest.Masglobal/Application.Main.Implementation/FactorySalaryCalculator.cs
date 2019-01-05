@@ -17,7 +17,7 @@ using Core.Entities;
 
 namespace Application.Main.Implementation
 {
-    public class FactorySalaryCalculator
+    public class FactorySalaryCalculator : IFactorySalaryCalculator
     {
         private readonly IEnumerable<ISalaryCalculator> _calculators;
 
