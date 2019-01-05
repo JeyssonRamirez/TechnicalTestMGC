@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Core.DataTransferObject\Core.DataTransferObject.csproj" />
     <ProjectReference Include="..\Core.Entities\Core.Entities.csproj" />
-    <ProjectReference Include="..\Crosscuting.DataTypes\Crosscuting.DataTypes.csproj" />
   </ItemGroup>
 
 </Project>
