@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.MainRepository", "Core
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crosscuting.DataTypes", "Crosscuting.DataTypes\Crosscuting.DataTypes.csproj", "{A92E5739-6836-4C14-8B98-470AFCE169F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.DependencyInjectionFactory", "IoC.DependencyInjectionFactory\IoC.DependencyInjectionFactory.csproj", "{EE2BF333-DA1E-4D89-B7B8-5F4005BCD63B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{A92E5739-6836-4C14-8B98-470AFCE169F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A92E5739-6836-4C14-8B98-470AFCE169F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A92E5739-6836-4C14-8B98-470AFCE169F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE2BF333-DA1E-4D89-B7B8-5F4005BCD63B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE2BF333-DA1E-4D89-B7B8-5F4005BCD63B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE2BF333-DA1E-4D89-B7B8-5F4005BCD63B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE2BF333-DA1E-4D89-B7B8-5F4005BCD63B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,6 +145,7 @@ Global
 		{8F27B1C7-DEAD-412B-8E25-7E4590FF8506} = {7D713936-FB30-40B0-A4AD-4A34F3FD8F7E}
 		{542ABB0A-EF3A-40D1-A2FF-4DD9B33E5801} = {2B12E6B5-8806-46E2-A1A7-0711709B7E24}
 		{A92E5739-6836-4C14-8B98-470AFCE169F3} = {3333529C-5357-4BB3-BE97-863BEA06B58F}
+		{EE2BF333-DA1E-4D89-B7B8-5F4005BCD63B} = {D1F4E7BA-C0EC-4162-AD11-741B26C8F64E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99CDDCA9-78EC-4A48-AC2F-16E4713D993E}

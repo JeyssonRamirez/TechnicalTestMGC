@@ -32,7 +32,7 @@ namespace Application.Main.Implementation
         }
 
 
-        public ResponseApi GetEmployesWithSalary(int identification)
+        public ResponseApi GetEmployeeWithSalary(int identification)
         {
             var response = new ResponseApi();
             try

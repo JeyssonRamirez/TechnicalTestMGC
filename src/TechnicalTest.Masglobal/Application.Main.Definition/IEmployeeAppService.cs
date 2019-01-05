@@ -17,7 +17,7 @@ namespace Application.Main.Definition
 {
     public interface IEmployeeAppService
     {
-        ResponseApi GetEmployesWithSalary(int identification);
+        ResponseApi GetEmployeeWithSalary(int identification);
         ResponseApi GetEmployeesWithSalary();
     }
 }
